@@ -102,14 +102,14 @@ const stories = [
         caption: 'Gotong Royong'
     },
     {
-        image: 'images/WhatsApp Image 2026-01-18 at 09.58.25 (1).jpeg',
-        title: 'Program Pertanian',
-        caption: 'Kegiatan pertanian berkelanjutan desa kami'
+        image: 'Kadirojo-2/images/image 2.jpeg',
+        title: 'Gotong royong',
+        caption: 'kamKebersamaaan masyarakat desa'
     },
     {
         image: 'images/image 1.jpeg',
-        title: 'UMKM Lokal',
-        caption: 'Produk unggulan dari pengusaha lokal'
+        title: 'Gotong royong',
+        caption: 'Kebersamaaan masyarakat desa'
     },
     {
         image: 'images/image 3.jpeg',
