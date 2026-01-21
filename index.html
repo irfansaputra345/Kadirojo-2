@@ -1,483 +1,647 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desa Kadirojo 2 - Desa Digital Indonesia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- Floating Weather Widget -->
     <div class="floating-weather" onclick="openWeatherModal()">
-        <div class="floating-weather-content">
-            <i id="floating-weather-icon" class="fas fa-cloud"></i>
-            <div class="floating-weather-info">
-                <span class="floating-temp" id="floating-temp">--°C</span>
-                <span class="floating-location">Purwom...</span>
-            </div>
+      <div class="floating-weather-content">
+        <i id="floating-weather-icon" class="fas fa-cloud"></i>
+        <div class="floating-weather-info">
+          <span class="floating-temp" id="floating-temp">--°C</span>
+          <span class="floating-location">Purwom...</span>
         </div>
-        <p class="floating-weather-label">Cuaca</p>
+      </div>
+      <p class="floating-weather-label">Cuaca</p>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="images/pp rt 6.png" alt="Logo RT 6" class="logo-img">
-                <span>KADIROJO 2</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Beranda</a></li>
-                <li><a href="#about" class="nav-link">Tentang</a></li>
-                <li><a href="#services" class="nav-link">Kegiatan</a></li>
-                <li><a href="#contact" class="nav-link">Kontak</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="images/pp rt 6.png" alt="Logo RT 6" class="logo-img" />
+          <span>KADIROJO 2</span>
         </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Beranda</a></li>
+          <li><a href="#about" class="nav-link">Tentang</a></li>
+          <li><a href="#services" class="nav-link">Kegiatan</a></li>
+          <li><a href="#contact" class="nav-link">Kontak</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <img src="images/pp rt 6.png" alt="Logo RT 06" class="badge-logo">
-                <span class="badge-text">RT 06 RW 02 KADIROJO II</span>
-            </div>
-            <h1 class="hero-title">RT 06 RW 02 Kadirojo 2</h1>
-            <p class="hero-subtitle">Purwomartani, Kalasan, Sleman, Yogyakarta</p>
-            <p class="hero-description">Membangun Desa Digital Berkelanjutan dengan Semangat Gotong Royong dan Kebersamaan</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Tentang Kami</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Hubungi Kami</button>
-            </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <img src="images/pp rt 6.png" alt="Logo RT 06" class="badge-logo" />
+          <span class="badge-text">RT 06 RW 02 KADIROJO II</span>
         </div>
-        <div class="hero-stats">
-            <div class="stat" onclick="toggleStatDetail(this)">
-                <h3>≈93 KK</h3>
-                <p>Kepala Keluarga</p>
-                <div class="stat-detail">Per Desember 2024</div>
-            </div>
-            <div class="stat" onclick="toggleStatDetail(this)">
-                <h3>3</h3>
-                <p>Padukuhan Berbatasan</p>
-                <div class="stat-detail">Sidokerto, Sambisari, Turusan</div>
-            </div>
+        <h1 class="hero-title">RT 06 RW 02 Kadirojo 2</h1>
+        <p class="hero-subtitle">Purwomartani, Kalasan, Sleman, Yogyakarta</p>
+        <p class="hero-description">
+          Membangun Desa Digital Berkelanjutan dengan Semangat Gotong Royong dan
+          Kebersamaan
+        </p>
+        <div class="hero-buttons">
+          <button
+            class="btn btn-primary"
+            onclick="
+              document
+                .getElementById('about')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Tentang Kami
+          </button>
+          <button
+            class="btn btn-secondary"
+            onclick="
+              document
+                .getElementById('contact')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Hubungi Kami
+          </button>
         </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" onclick="toggleStatDetail(this)">
+          <h3>≈93 KK</h3>
+          <p>Kepala Keluarga</p>
+          <div class="stat-detail">Per Desember 2024</div>
+        </div>
+        <div class="stat" onclick="toggleStatDetail(this)">
+          <h3>3</h3>
+          <p>Padukuhan Berbatasan</p>
+          <div class="stat-detail">Sidokerto, Sambisari, Turusan</div>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="container">
-            <h2>Tentang RT 06 RW 02</h2>
-            <div class="about-intro" onclick="toggleAboutExpanded()">
-                <div class="about-intro-content">
-                    <h3>Apa itu RT?</h3>
-                    <p>RT adalah singkatan dari <strong>Rukun Tetangga</strong>, yaitu lembaga kemasyarakatan yang dibentuk melalui musyawarah masyarakat setempat. RT dipimpin oleh Ketua RT yang dipilih oleh warganya.</p>
-                    <p><strong>RT 06</strong> merupakan organisasi RT yang beralamat di <strong>RW 02 Kadirojo II Purwomartani Kalasan Sleman Yogyakarta</strong>, terdiri dari <strong>≈93 KK</strong> per Desember 2024.</p>
-                    <p class="about-expand-text">👇 Klik untuk melihat informasi lengkap</p>
-                </div>
-            </div>
-            <div id="about-expanded" class="about-expanded" style="display: none;">
-                <h3>Wilayah dan Batas Administratif</h3>
-                <p>Wilayah RT 06 merupakan wilayah yang berbatasan langsung dengan tiga padukuhan:</p>
-                <div class="about-locations">
-                    <div class="location-item" onclick="highlightLocation(this)">
-                        <i class="fas fa-map-pin"></i>
-                        <h4>Padukuhan Sidokerto</h4>
-                        <p>Batas utara RT 06</p>
-                    </div>
-                    <div class="location-item" onclick="highlightLocation(this)">
-                        <i class="fas fa-map-pin"></i>
-                        <h4>Padukuhan Sambisari</h4>
-                        <p>Batas timur RT 06</p>
-                    </div>
-                    <div class="location-item" onclick="highlightLocation(this)">
-                        <i class="fas fa-map-pin"></i>
-                        <h4>Padukuhan Turusan</h4>
-                        <p>Batas barat RT 06</p>
-                    </div>
-                </div>
-                <h3 style="margin-top: 30px;">Sistem Birokrasi</h3>
-                <p>Dalam sistem birokrasi di Indonesia, RT berada di bawah Rukun Warga (RW). RW merupakan lembaga pemerintah yang terdiri dari beberapa kelompok RT di suatu desa/kelurahan.</p>
-            </div>
-            <h3 style="margin-top: 50px; text-align: center;">Nilai-Nilai Kami</h3>
-            <div class="about-grid">
-                <div class="about-item" onclick="expandCard(this)">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Gotong Royong</h3>
-                    <p>Semangat kebersamaan dan saling membantu adalah fondasi kehidupan masyarakat desa kami.</p>
-                </div>
-                <div class="about-item" onclick="expandCard(this)">
-                    <i class="fas fa-users"></i>
-                    <h3>Silaturahmi</h3>
-                    <p>Membangun hubungan baik antar warga untuk menciptakan komunitas yang solid dan harmonis.</p>
-                </div>
-                <div class="about-item" onclick="expandCard(this)">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Berkelanjutan</h3>
-                    <p>Memastikan setiap inisiatif dilakukan dengan mempertimbangkan generasi masa depan.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Tentang RT 06 RW 02</h2>
+        <div class="about-intro" onclick="toggleAboutExpanded()">
+          <div class="about-intro-content">
+            <h3>Apa itu RT?</h3>
+            <p>
+              RT adalah singkatan dari <strong>Rukun Tetangga</strong>, yaitu
+              lembaga kemasyarakatan yang dibentuk melalui musyawarah masyarakat
+              setempat. RT dipimpin oleh Ketua RT yang dipilih oleh warganya.
+            </p>
+            <p>
+              <strong>RT 06</strong> merupakan organisasi RT yang beralamat di
+              <strong
+                >RW 02 Kadirojo II Purwomartani Kalasan Sleman
+                Yogyakarta</strong
+              >, terdiri dari <strong>≈93 KK</strong> per Desember 2024.
+            </p>
+            <p class="about-expand-text">
+              👇 Klik untuk melihat informasi lengkap
+            </p>
+          </div>
         </div>
+        <div id="about-expanded" class="about-expanded" style="display: none">
+          <h3>Wilayah dan Batas Administratif</h3>
+          <p>
+            Wilayah RT 06 merupakan wilayah yang berbatasan langsung dengan tiga
+            padukuhan:
+          </p>
+          <div class="about-locations">
+            <div class="location-item" onclick="highlightLocation(this)">
+              <i class="fas fa-map-pin"></i>
+              <h4>Padukuhan Sidokerto</h4>
+              <p>Batas utara RT 06</p>
+            </div>
+            <div class="location-item" onclick="highlightLocation(this)">
+              <i class="fas fa-map-pin"></i>
+              <h4>Padukuhan Sambisari</h4>
+              <p>Batas timur RT 06</p>
+            </div>
+            <div class="location-item" onclick="highlightLocation(this)">
+              <i class="fas fa-map-pin"></i>
+              <h4>Padukuhan Turusan</h4>
+              <p>Batas barat RT 06</p>
+            </div>
+          </div>
+          <h3 style="margin-top: 30px">Sistem Birokrasi</h3>
+          <p>
+            Dalam sistem birokrasi di Indonesia, RT berada di bawah Rukun Warga
+            (RW). RW merupakan lembaga pemerintah yang terdiri dari beberapa
+            kelompok RT di suatu desa/kelurahan.
+          </p>
+        </div>
+        <h3 style="margin-top: 50px; text-align: center">Nilai-Nilai Kami</h3>
+        <div class="about-grid">
+          <div class="about-item" onclick="expandCard(this)">
+            <i class="fas fa-handshake"></i>
+            <h3>Gotong Royong</h3>
+            <p>
+              Semangat kebersamaan dan saling membantu adalah fondasi kehidupan
+              masyarakat desa kami.
+            </p>
+          </div>
+          <div class="about-item" onclick="expandCard(this)">
+            <i class="fas fa-users"></i>
+            <h3>Silaturahmi</h3>
+            <p>
+              Membangun hubungan baik antar warga untuk menciptakan komunitas
+              yang solid dan harmonis.
+            </p>
+          </div>
+          <div class="about-item" onclick="expandCard(this)">
+            <i class="fas fa-leaf"></i>
+            <h3>Berkelanjutan</h3>
+            <p>
+              Memastikan setiap inisiatif dilakukan dengan mempertimbangkan
+              generasi masa depan.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Services/Kegiatan Section -->
     <section id="services" class="services">
-        <div class="container">
-            <h2>Kegiatan & Program Utama</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tractor"></i>
-                    </div>
-                    <h3>Program Pertanian</h3>
-                    <p>Pelatihan dan pendampingan untuk meningkatkan produktivitas pertanian dengan teknologi modern.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <h3>Kembangkan UMKM</h3>
-                    <p>Dukungan penuh untuk mengembangkan bisnis lokal menjadi usaha yang berkelanjutan.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Pemberdayaan Masyarakat</h3>
-                    <p>Program pelatihan keterampilan dan literasi untuk meningkatkan kualitas SDM desa.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Konservasi Lingkungan</h3>
-                    <p>Inisiatif menjaga kelestarian alam dan lingkungan hidup yang sehat.</p>
-                </div>
+      <div class="container">
+        <h2>Kegiatan & Program Utama</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-tractor"></i>
             </div>
+            <h3>Program Pertanian</h3>
+            <p>
+              Pelatihan dan pendampingan untuk meningkatkan produktivitas
+              pertanian dengan teknologi modern.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h3>Kembangkan UMKM</h3>
+            <p>
+              Dukungan penuh untuk mengembangkan bisnis lokal menjadi usaha yang
+              berkelanjutan.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Pemberdayaan Masyarakat</h3>
+            <p>
+              Program pelatihan keterampilan dan literasi untuk meningkatkan
+              kualitas SDM desa.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Konservasi Lingkungan</h3>
+            <p>
+              Inisiatif menjaga kelestarian alam dan lingkungan hidup yang
+              sehat.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-
 
     <!-- Stories Section -->
     <!-- Stories & Weather Section -->
     <section class="stories-weather-section">
-        <div class="container">
-            <div class="stories-weather-wrapper">
-                <!-- Main Stories Section -->
-                <div class="stories-main">
-                    <h2>🎬 Cerita Kegiatan Desa</h2>
-                    <div class="story-viewer">
-                        <div class="story-progress-bar">
-                            <div class="story-progress-fill"></div>
-                        </div>
-                        <img id="story-image" src="" alt="Story" class="story-image">
-                        <div class="story-info">
-                            <p id="story-title" class="story-title"></p>
-                            <p id="story-caption" class="story-caption"></p>
-                        </div>
-                        <div class="story-nav">
-                            <button class="story-btn prev" onclick="previousStory()">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="story-btn next" onclick="nextStory()">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                        <div class="story-dots">
-                            <button class="dot" onclick="goToStory(0)"></button>
-                            <button class="dot" onclick="goToStory(1)"></button>
-                            <button class="dot" onclick="goToStory(2)"></button>
-                            <button class="dot" onclick="goToStory(3)"></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Weather Widget Sidebar HIDDEN -->
-
+      <div class="container">
+        <div class="stories-weather-wrapper">
+          <!-- Main Stories Section -->
+          <div class="stories-main">
+            <h2>🎬 Cerita Kegiatan Desa</h2>
+            <div class="story-viewer">
+              <div class="story-progress-bar">
+                <div class="story-progress-fill"></div>
+              </div>
+              <img id="story-image" src="" alt="Story" class="story-image" />
+              <div class="story-info">
+                <p id="story-title" class="story-title"></p>
+                <p id="story-caption" class="story-caption"></p>
+              </div>
+              <div class="story-nav">
+                <button class="story-btn prev" onclick="previousStory()">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="story-btn next" onclick="nextStory()">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              <div class="story-dots">
+                <button class="dot" onclick="goToStory(0)"></button>
+                <button class="dot" onclick="goToStory(1)"></button>
+                <button class="dot" onclick="goToStory(2)"></button>
+                <button class="dot" onclick="goToStory(3)"></button>
+              </div>
             </div>
+          </div>
+
+          <!-- Weather Widget Sidebar HIDDEN -->
         </div>
+      </div>
     </section>
 
     <!-- Weather Widget Section -->
     <section class="weather-widget-section">
-        <div class="container">
-            <div class="weather-card" onclick="openWeatherModal()">
-                <div class="weather-card-main">
-                    <i id="weather-icon-main" class="fas fa-cloud"></i>
-                    <div class="weather-info">
-                        <div class="weather-temp-display" id="weather-temp-display">--°C</div>
-                        <div class="weather-status" id="weather-status">Loading...</div>
-                    </div>
-                </div>
-                <div class="weather-arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
+      <div class="container">
+        <div class="weather-card" onclick="openWeatherModal()">
+          <div class="weather-card-main">
+            <i id="weather-icon-main" class="fas fa-cloud"></i>
+            <div class="weather-info">
+              <div class="weather-temp-display" id="weather-temp-display">
+                --°C
+              </div>
+              <div class="weather-status" id="weather-status">Loading...</div>
             </div>
+          </div>
+          <div class="weather-arrow">
+            <i class="fas fa-chevron-right"></i>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Weather Modal -->
-    <div id="weather-modal" class="weather-modal" onclick="closeWeatherModal(event)">
-        <div class="weather-modal-content" onclick="event.stopPropagation()">
-            <span class="weather-modal-close" onclick="closeWeatherModal()">&times;</span>
-            <div class="weather-modal-header">
-                <h2>🌤️ Informasi Cuaca Desa</h2>
-            </div>
-            <div class="weather-modal-body">
-                <div class="weather-main-display">
-                    <i id="weather-icon-modal" class="fas fa-cloud"></i>
-                    <div class="weather-temp-large" id="weather-temp-modal">--°C</div>
-                </div>
-                <div class="weather-description" id="weather-description-modal">Loading...</div>
-                <div class="weather-details-grid">
-                    <div class="weather-detail-box">
-                        <i class="fas fa-droplets"></i>
-                        <div>
-                            <p class="detail-label">Kelembaban</p>
-                            <p class="detail-value" id="humidity-modal">--%</p>
-                        </div>
-                    </div>
-                    <div class="weather-detail-box">
-                        <i class="fas fa-wind"></i>
-                        <div>
-                            <p class="detail-label">Kecepatan Angin</p>
-                            <p class="detail-value" id="wind-modal">-- km/h</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="weather-location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Kadirojo 2, Purwomartani, Sleman, Yogyakarta</p>
-                </div>
-            </div>
+    <div
+      id="weather-modal"
+      class="weather-modal"
+      onclick="closeWeatherModal(event)"
+    >
+      <div class="weather-modal-content" onclick="event.stopPropagation()">
+        <span class="weather-modal-close" onclick="closeWeatherModal()"
+          >&times;</span
+        >
+        <div class="weather-modal-header">
+          <h2>🌤️ Informasi Cuaca Desa</h2>
         </div>
+        <div class="weather-modal-body">
+          <div class="weather-main-display">
+            <i id="weather-icon-modal" class="fas fa-cloud"></i>
+            <div class="weather-temp-large" id="weather-temp-modal">--°C</div>
+          </div>
+          <div class="weather-description" id="weather-description-modal">
+            Loading...
+          </div>
+          <div class="weather-details-grid">
+            <div class="weather-detail-box">
+              <i class="fas fa-droplets"></i>
+              <div>
+                <p class="detail-label">Kelembaban</p>
+                <p class="detail-value" id="humidity-modal">--%</p>
+              </div>
+            </div>
+            <div class="weather-detail-box">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p class="detail-label">Kecepatan Angin</p>
+                <p class="detail-value" id="wind-modal">-- km/h</p>
+              </div>
+            </div>
+          </div>
+          <div class="weather-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Kadirojo 2, Purwomartani, Sleman, Yogyakarta</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- FAQ Section -->
     <section class="faq-section">
-        <div class="container">
-            <h2>Pertanyaan Umum</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleAnswer(this)">
-                        <h3>Bagaimana cara menjadi anggota program UMKM?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Anda dapat menghubungi kantor desa kami atau mengisi formulir pendaftaran di halaman kontak. Tim kami akan membantu proses pendaftaran dan memberikan pelatihan yang diperlukan.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleAnswer(this)">
-                        <h3>Apa saja produk unggulan desa kami?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Produk unggulan kami meliputi hasil pertanian organik, kerajinan tangan lokal, dan produk olahan pangan tradisional yang berkualitas tinggi.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleAnswer(this)">
-                        <h3>Bagaimana kami menjaga kelestarian lingkungan?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Kami menerapkan praktik pertanian berkelanjutan, program penanaman pohon, dan manajemen limbah yang baik untuk menjaga ekosistem desa.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleAnswer(this)">
-                        <h3>Kapan jadwal kegiatan gotong royong kami?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Kegiatan gotong royong dilaksanakan setiap bulan atau sesuai dengan kebutuhan. Informasi jadwal dapat dilihat di papan pengumuman desa atau hubungi RT setempat.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>Pertanyaan Umum</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+              <h3>Bagaimana cara menjadi anggota program UMKM?</h3>
+              <i class="fas fa-plus"></i>
             </div>
+            <div class="faq-answer">
+              <p>
+                Anda dapat menghubungi kantor desa kami atau mengisi formulir
+                pendaftaran di halaman kontak. Tim kami akan membantu proses
+                pendaftaran dan memberikan pelatihan yang diperlukan.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+              <h3>Apa saja produk unggulan desa kami?</h3>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Produk unggulan kami meliputi hasil pertanian organik, kerajinan
+                tangan lokal, dan produk olahan pangan tradisional yang
+                berkualitas tinggi.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+              <h3>Bagaimana kami menjaga kelestarian lingkungan?</h3>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Kami menerapkan praktik pertanian berkelanjutan, program
+                penanaman pohon, dan manajemen limbah yang baik untuk menjaga
+                ekosistem desa.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+              <h3>Kapan jadwal kegiatan gotong royong kami?</h3>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Kegiatan gotong royong dilaksanakan setiap bulan atau sesuai
+                dengan kebutuhan. Informasi jadwal dapat dilihat di papan
+                pengumuman desa atau hubungi RT setempat.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Information Board Section -->
     <section class="info-board-section">
-        <div class="container">
-            <h2>Papan Informasi</h2>
-            <div class="info-board-grid">
-                <div class="info-card" onclick="openInfoModal(this)">
-                    <div class="info-card-image">
-                        <img src="images/NO DARURAT RT 2025.png" alt="Nomor Darurat RT 2025">
-                        <div class="info-card-overlay">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                    </div>
-                    <div class="info-card-content">
-                        <h3>Nomor Darurat</h3>
-                        <p>Hubungi segera dalam situasi darurat</p>
-                    </div>
-                </div>
-                <div class="info-card" onclick="openInfoModal(this)">
-                    <div class="info-card-image">
-                        <img src="images/STRUKTUR RT 06.png" alt="Struktur Organisasi RT 06">
-                        <div class="info-card-overlay">
-                            <i class="fas fa-sitemap"></i>
-                        </div>
-                    </div>
-                    <div class="info-card-content">
-                        <h3>Struktur Organisasi</h3>
-                        <p>Hirarki pengelolaan RT 06</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>Papan Informasi</h2>
+        <div class="info-board-grid">
+          <div class="info-card" onclick="openInfoModal(this)">
+            <div class="info-card-image">
+              <img
+                src="images/NO DARURAT RT 2025.png"
+                alt="Nomor Darurat RT 2025"
+              />
+              <div class="info-card-overlay">
+                <i class="fas fa-phone"></i>
+              </div>
             </div>
+            <div class="info-card-content">
+              <h3>Nomor Darurat</h3>
+              <p>Hubungi segera dalam situasi darurat</p>
+            </div>
+          </div>
+          <div class="info-card" onclick="openInfoModal(this)">
+            <div class="info-card-image">
+              <img
+                src="images/STRUKTUR RT 06.png"
+                alt="Struktur Organisasi RT 06"
+              />
+              <div class="info-card-overlay">
+                <i class="fas fa-sitemap"></i>
+              </div>
+            </div>
+            <div class="info-card-content">
+              <h3>Struktur Organisasi</h3>
+              <p>Hirarki pengelolaan RT 06</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Info Modal -->
     <div id="info-modal" class="info-modal" onclick="closeInfoModal(event)">
-        <div class="info-modal-content" onclick="event.stopPropagation()">
-            <span class="info-modal-close" onclick="closeInfoModal()">&times;</span>
-            <img id="info-modal-image" src="" alt="Info">
-        </div>
+      <div class="info-modal-content" onclick="event.stopPropagation()">
+        <span class="info-modal-close" onclick="closeInfoModal()">&times;</span>
+        <img id="info-modal-image" src="" alt="Info" />
+      </div>
     </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-header">
-                <h2>💬 Hubungi Kami</h2>
-                <p class="contact-subtitle">Punya pertanyaan? Hubungi kami langsung melalui salah satu cara di bawah</p>
-            </div>
-            
-            <div class="contact-wrapper">
-                <!-- Quick Contact Icons -->
-                <div class="quick-contact">
-                    <div class="contact-icon-btn" onclick="copyToClipboard('Desa Kadirojo 2, Purwomartani, Sleman, Yogyakarta')" title="Salin Alamat">
-                        <div class="icon-wrapper location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span class="tooltip">📍 Alamat</span>
-                        </div>
-                        <span class="icon-label">Alamat</span>
-                    </div>
-                    <div class="contact-icon-btn" onclick="openWhatsApp('62851198335833')" title="Hubungi WhatsApp">
-                        <div class="icon-wrapper whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="tooltip">💬 WhatsApp</span>
-                        </div>
-                        <span class="icon-label">WhatsApp</span>
-                    </div>
-                    <div class="contact-icon-btn" onclick="copyToClipboard('Kadirojo2rt06@gmail.com')" title="Salin Email">
-                        <div class="icon-wrapper email">
-                            <i class="fas fa-envelope"></i>
-                            <span class="tooltip">✉️ Email</span>
-                        </div>
-                        <span class="icon-label">Email</span>
-                    </div>
-                    <div class="contact-icon-btn" onclick="openMapFullscreen()" title="Lihat Lokasi">
-                        <div class="icon-wrapper map">
-                            <i class="fas fa-map"></i>
-                            <span class="tooltip">🗺️ Lokasi</span>
-                        </div>
-                        <span class="icon-label">Lokasi</span>
-                    </div>
-                    <div class="contact-icon-btn" onclick="window.open('https://instagram.com/kadirojo2')" title="Ikuti Instagram">
-                        <div class="icon-wrapper instagram">
-                            <i class="fab fa-instagram"></i>
-                            <span class="tooltip">📸 Instagram</span>
-                        </div>
-                        <span class="icon-label">Instagram</span>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper">
-                    <div class="form-header">
-                        <h3>📝 Kirim Pesan</h3>
-                        <p>Tulis pesan Anda dan kami akan merespon segera</p>
-                    </div>
-                    <form class="contact-form" action="https://formsubmit.co/Kadirojo2rt06@gmail.com" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">No. Telepon (Opsional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Masukkan no. telepon">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." rows="6" required></textarea>
-                        </div>
-                        <div class="contact-actions">
-                            <button type="submit" class="btn btn-submit-new">
-                                <span class="btn-text">✉️ Kirim Pesan</span>
-                                <span class="btn-icon">→</span>
-                            </button>
-                            <a href="https://wa.me/62851198335833?text=Halo%20RT%2006%20RW%2002%20Kadirojo%202" target="_blank" class="btn btn-whatsapp-direct">
-                                <span class="btn-text">💬 WhatsApp</span>
-                                <span class="btn-icon">→</span>
-                            </a>
-                        </div>
-                        <input type="hidden" name="_captcha" value="false">
-                    </form>
-                </div>
-            </div>
+      <div class="container">
+        <div class="contact-header">
+          <h2>💬 Hubungi Kami</h2>
+          <p class="contact-subtitle">
+            Punya pertanyaan? Hubungi kami langsung melalui salah satu cara di
+            bawah
+          </p>
         </div>
+
+        <div class="contact-wrapper">
+          <!-- Quick Contact Icons -->
+          <div class="quick-contact">
+            <div
+              class="contact-icon-btn"
+              onclick="
+                copyToClipboard(
+                  'Desa Kadirojo 2, Purwomartani, Sleman, Yogyakarta',
+                )
+              "
+              title="Salin Alamat"
+            >
+              <div class="icon-wrapper location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="tooltip">📍 Alamat</span>
+              </div>
+              <span class="icon-label">Alamat</span>
+            </div>
+            <div
+              class="contact-icon-btn"
+              onclick="openWhatsApp('62851198335833')"
+              title="Hubungi WhatsApp"
+            >
+              <div class="icon-wrapper whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span class="tooltip">💬 WhatsApp</span>
+              </div>
+              <span class="icon-label">WhatsApp</span>
+            </div>
+            <div
+              class="contact-icon-btn"
+              onclick="copyToClipboard('Kadirojo2rt06@gmail.com')"
+              title="Salin Email"
+            >
+              <div class="icon-wrapper email">
+                <i class="fas fa-envelope"></i>
+                <span class="tooltip">✉️ Email</span>
+              </div>
+              <span class="icon-label">Email</span>
+            </div>
+            <div
+              class="contact-icon-btn"
+              onclick="openMapFullscreen()"
+              title="Lihat Lokasi"
+            >
+              <div class="icon-wrapper map">
+                <i class="fas fa-map"></i>
+                <span class="tooltip">🗺️ Lokasi</span>
+              </div>
+              <span class="icon-label">Lokasi</span>
+            </div>
+            <div
+              class="contact-icon-btn"
+              onclick="window.open('https://instagram.com/kadirojo2')"
+              title="Ikuti Instagram"
+            >
+              <div class="icon-wrapper instagram">
+                <i class="fab fa-instagram"></i>
+                <span class="tooltip">📸 Instagram</span>
+              </div>
+              <span class="icon-label">Instagram</span>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <div class="form-header">
+              <h3>📝 Kirim Pesan</h3>
+              <p>Tulis pesan Anda dan kami akan merespon segera</p>
+            </div>
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/Kadirojo2rt06@gmail.com"
+              method="POST"
+            >
+              <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Masukkan nama Anda"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Masukkan email Anda"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">No. Telepon (Opsional)</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Masukkan no. telepon"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tulis pesan Anda di sini..."
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+              <div class="contact-actions">
+                <button type="submit" class="btn btn-submit-new">
+                  <span class="btn-text">✉️ Kirim Pesan</span>
+                  <span class="btn-icon">→</span>
+                </button>
+                <a
+                  href="https://wa.me/62851198335833?text=Halo%20RT%2006%20RW%2002%20Kadirojo%202"
+                  target="_blank"
+                  class="btn btn-whatsapp-direct"
+                >
+                  <span class="btn-text">💬 WhatsApp</span>
+                  <span class="btn-icon">→</span>
+                </a>
+              </div>
+              <input type="hidden" name="_captcha" value="false" />
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="images/pp rt 6.png" alt="Logo RT 6" class="footer-logo-img">
-                    </div>
-                    <h3>RT 06 RW 02</h3>
-                    <p>Desa Kadirojo 2, Purwomartani, Sleman, Yogyakarta</p>
-                    <p>Membangun masa depan desa yang berkelanjutan dan sejahtera melalui inovasi dan kebersamaan.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Menu</h3>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#about">Tentang</a></li>
-                        <li><a href="#services">Kegiatan</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Ikuti Kami</h3>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img
+                src="images/pp rt 6.png"
+                alt="Logo RT 6"
+                class="footer-logo-img"
+              />
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Desa Kadirojo 2. Semua hak dilindungi.</p>
+            <h3>RT 06 RW 02</h3>
+            <p>Desa Kadirojo 2, Purwomartani, Sleman, Yogyakarta</p>
+            <p>
+              Membangun masa depan desa yang berkelanjutan dan sejahtera melalui
+              inovasi dan kebersamaan.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Menu</h3>
+            <ul>
+              <li><a href="#home">Beranda</a></li>
+              <li><a href="#about">Tentang</a></li>
+              <li><a href="#services">Kegiatan</a></li>
+              <li><a href="#contact">Kontak</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Ikuti Kami</h3>
+            <div class="social-links">
+              <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Desa Kadirojo 2. Semua hak dilindungi.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
