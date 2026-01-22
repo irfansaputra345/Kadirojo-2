@@ -2434,7 +2434,7 @@ body {
     .faq-section,
     .map-section,
     .contact {
-        padding: 60px 20px;
+        padding: 60px 60px;
     }
 
     .stat {
@@ -2447,15 +2447,15 @@ body {
 
     .about-item,
     .service-card {
-        padding: 30px 20px;
+        padding: 30px 30px;
     }
 
     .story-image {
-        height: 400px;
+        height: 500px;
     }
 
     .footer-content {
-        gap: 30px;
+        gap: 60px;
     }
 }
 
@@ -2551,7 +2551,7 @@ body {
     }
 
     .floating-weather-content i {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .floating-temp {
