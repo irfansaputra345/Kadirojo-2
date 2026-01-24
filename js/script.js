@@ -20,7 +20,45 @@ function copyToClipboard(text) {
 }
 
 function openWhatsApp(phoneNumber) {
-    window.open(`https://wa.me/${phoneNumber}`, '_blank');
+    // Clean phone number from non-numeric characters
+    const cleanNumber = phoneNumber.replace(/\D/g, '');
+    window.open(`https://wa.me/${cleanNumber}`, '_blank');
+}
+
+function sendFormToWhatsApp(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+
+    if (!name || !message) {
+        showToast('Mohon isi nama dan pesan Anda! ⚠️');
+        return;
+    }
+
+    const text = `Halo RT 06 RW 02 Kadirojo 2,%0A%0A` +
+        `*Nama:* ${name}%0A` +
+        `*Email:* ${email}%0A` +
+        `*No. Telp:* ${phone || '-'}%0A%0A` +
+        `*Pesan:*%0A${message}`;
+
+    const phoneNumber = '6287847712990';
+    window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
+
+    showToast('Membuka WhatsApp... 🚀');
+}
+
+function initContactForm() {
+    const form = document.querySelector('.contact-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            // Check if the user clicked the WhatsApp button or the main submit
+            // For now, let's keep the main submit going to FormSubmit.co
+            // but add a listener for the specific WhatsApp button if we change it.
+        });
+    }
 }
 
 function showToast(message) {
