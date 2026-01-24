@@ -1,0 +1,154 @@
+/* ============ GLOBAL STYLES ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #a855f7;
+    --dark-color: #0a0a0a;
+    --light-color: #f5f5f5;
+    --text-color: #e5e5e5;
+    --border-color: #2a2a2a;
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-color);
+    background-color: #050505;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    perspective: 1000px;
+}
+
+/* Ensure content is above the pattern */
+body>* {
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============ CURSOR BLOB ============ */
+#cursor-blob {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    transition: transform 0.1s ease-out;
+    filter: blur(50px);
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@media (pointer: fine) {
+    #cursor-blob {
+        display: block;
+    }
+}
+
+/* Dark Theme Text Colors */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff !important;
+}
+
+p {
+    color: #d1d5db;
+}
+
+a {
+    color: #a78bfa;
+}
+
+a:hover {
+    color: #c4b5fd;
+}
+
+/* Specific Element Colors */
+span,
+div,
+li {
+    color: inherit;
+}
+
+.about-item p,
+.service-card p,
+.faq-answer p,
+.contact-form label,
+.weather-status,
+.detail-label {
+    color: #d1d5db !important;
+}
+
+.about-item h3,
+.service-card h3,
+.faq-question,
+.form-header h3 {
+    color: #ffffff !important;
+}
+
+/* Button text */
+button,
+.btn {
+    color: #ffffff;
+}
+
+/* Input and textarea */
+input,
+textarea {
+    color: #e5e5e5;
+    background: rgba(30, 30, 30, 0.8);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
