@@ -223,7 +223,7 @@ const stories = [
     },
     {
         image: 'images/story-umkm.jpg',
-        title: 'UMKM Lokal',
+        title: 'Gotong Royong',
         caption: 'Produk unggulan dari pengusaha lokal'
     },
     {
