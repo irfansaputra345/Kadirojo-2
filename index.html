@@ -385,7 +385,8 @@
         <div class="container">
             <h2>Papan Informasi</h2>
             <div class="info-board-grid">
-                <div class="info-card" onclick="openInfoModal(this)">
+                <div class="info-card" onclick="openInfoModal(this)" data-title="Nomor Darurat"
+                    data-desc="Daftar nomor telepon penting untuk situasi darurat di lingkungan RT 06 RW 02. Simpan nomor ini untuk keamanan bersama.">
                     <div class="info-card-image">
                         <img src="images/no-darurat-rt-2025.png" alt="Nomor Darurat RT 2025">
                         <div class="info-card-overlay">
@@ -397,7 +398,8 @@
                         <p>Hubungi segera dalam situasi darurat</p>
                     </div>
                 </div>
-                <div class="info-card" onclick="openInfoModal(this)">
+                <div class="info-card" onclick="openInfoModal(this)" data-title="Struktur Organisasi"
+                    data-desc="Bagan struktur organisasi pengurus RT 06 RW 02 Periode 2025-2027. Kenali pengurus lingkungan Anda.">
                     <div class="info-card-image">
                         <img src="images/struktur-rt-06.png" alt="Struktur Organisasi RT 06">
                         <div class="info-card-overlay">
@@ -417,7 +419,15 @@
     <div id="info-modal" class="info-modal" onclick="closeInfoModal(event)">
         <div class="info-modal-content" onclick="event.stopPropagation()">
             <span class="info-modal-close" onclick="closeInfoModal()">&times;</span>
-            <img id="info-modal-image" src="" alt="Info">
+            <div class="info-modal-body">
+                <div class="info-modal-image-wrapper">
+                    <img id="info-modal-image" src="" alt="Info">
+                </div>
+                <div class="info-modal-details">
+                    <h3 id="info-modal-title">Title</h3>
+                    <p id="info-modal-desc">Description</p>
+                </div>
+            </div>
         </div>
     </div>
 

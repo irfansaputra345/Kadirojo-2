@@ -559,11 +559,29 @@ function toggleAnswer(element) {
 
 // ============ INFO MODAL MANAGEMENT ============
 function openInfoModal(element) {
+    if (!element) return;
+
     const img = element.querySelector('img');
+    const title = element.getAttribute('data-title');
+    const desc = element.getAttribute('data-desc');
+
     const modal = document.getElementById('info-modal');
     const modalImage = document.getElementById('info-modal-image');
+    const modalTitle = document.getElementById('info-modal-title');
+    const modalDesc = document.getElementById('info-modal-desc');
 
-    modalImage.src = img.src;
+    if (!modal) {
+        console.error('Info modal element not found!');
+        return;
+    }
+
+    if (img && modalImage) {
+        modalImage.src = img.src;
+    }
+
+    if (modalTitle) modalTitle.textContent = title || 'Informasi';
+    if (modalDesc) modalDesc.textContent = desc || '';
+
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -574,8 +592,10 @@ function closeInfoModal(event) {
     }
 
     const modal = document.getElementById('info-modal');
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 }
 
 // Close modal on Escape key
